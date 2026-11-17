@@ -1,18 +1,16 @@
 menu boucle 
 
-# Afficher le menu
+
+#Afficher le menu
 #   tant que infini
-#    proposer les choix a l'utilisateur  
-#    demander un choix à l'utilisateur
-#    si le choix est valide = 1,2 ou 3 
-#   si choix n'est pas isdighit
-#   return false
-#   sinon
-#    arreter la boucle ici
-#       sinon
-#           afficher un message d'erreur 
-#           la boucle continue 
-...
+#   proposer les choix a l'utilisateur 
+#   demander un choix à l'utilisateur
+#   si le choix n'est pas un chiffre 
+#       afficher un message d'erreur
+#       la boucle continue
+#   sinon si bon chiffre 
+#       arrêter la boucle
+#   retourner le choix
 
 
 
@@ -36,7 +34,6 @@ menu boucle
 
 # Définir la fonction combat entre un personnage et un monstre
 #   annoncer le combat entre personnage et el monstro
-#   créer une variable round = 0
 #   tant que les pv du personnage sont superieur a 0
 #       et que les PV du monstre sont supérieurs à 0
 #       combat continue
@@ -49,14 +46,14 @@ menu boucle
 #   le monstre attaque le personnage
 #   retirer les dégâts aux PV du personnage
 #   si les PV du personnage sont inférieurs ou égaux à 0
-#           afficher que le monstre a gagné
-#   arrêter la boucle break
+#           affich
+#   arrêter la boucle 
 
 
 
 from pymongo import MongoClient
 
-client = MongoClient("mongodb://localhost:27017/")
+client = MongoClient("mongodb://localhost:270er que le monstre a gagné17/")
 db = client 
 
 def main():
