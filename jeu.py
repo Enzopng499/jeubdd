@@ -129,7 +129,25 @@ def choix_monstre_aleatoire():
     monstre = random.choice(monstre)
     return monstre
 
+def attaquer(personnage, monstre):
+    monstre["pv"] = monstre["pv"] - personnage["degats"]
+    print(f"{personnage['nom']} ATK {monstre['nom']} : {personnage['degats']} dégâts")
+    print(f"PV de {monstre['nom']} : {max(0, monstre['pv'])}")
+    if est_mort(personnage, monstre):
+        return
+    personnage["pv"] = personnage["pv"] - monstre["degats"]
+    print(f"{monstre['nom']} ATK {personnage['nom']} : {monstre['degats']} dégâts")
+    print(f"PV de {personnage['nom']} : {max(0, personnage['pv'])}")
+    est_mort(personnage, monstre)
 
+def est_mort(personnage, monstre):
+    if monstre["pv"] <= 0:
+        print(f"{personnage ["nom"]} win !")
+        return True
+    if personnage["pv"] <= 0:
+        print(f"{monstre ["nom"]} win !")
+        return True
+    return False
 
     
 
