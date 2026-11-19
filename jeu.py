@@ -149,6 +149,11 @@ def est_mort(personnage, monstre):
         return True
     return False
 
+def combat(personnage, monstre):
+    print(f"{personnage ["nom"]} affronte {monstre ["nom"]}")
+    while personnage ["pv"] > 0 and monstre ["pv"] > 0:
+        attaquer(personnage, monstre)
+
     
 
 
