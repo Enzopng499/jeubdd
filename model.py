@@ -1,6 +1,6 @@
 #liste des personnages du jeu 
 
-personnage = [
+liste_personnage = [
     {"NOM": "Guerrier", "ATK": 15, "DEF": 10, "PV": 100},
     {"NOM": "Mage", "ATK": 20, "DEF": 5, "PV": 80},
     {"NOM": "Archer", "ATK": 18, "DEF": 7, "PV": 90},
@@ -15,7 +15,7 @@ personnage = [
 
 # Liste des monstres du jeu
 
-monstre = [
+liste_monstre = [
     {"NOM": "Gobelin", "ATK": 10, "DEF": 5, "PV": 50},
     {"NOM": "Orc", "ATK": 20, "DEF": 8, "PV": 120},
     {"NOM": "Dragon", "ATK": 35, "DEF": 20, "PV": 300},

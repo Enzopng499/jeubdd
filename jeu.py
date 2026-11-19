@@ -87,11 +87,10 @@
 
 import copy
 import random
-from model import personnage, monstre
-
 from pymongo import MongoClient
-from model import personnage, monstre
+from model import liste_personnage, liste_monstre
 
+# Connexion à la base de données MongoDB
 client = MongoClient("mongodb://localhost:27017/")
 db = client["bdd_python"]
 
@@ -99,13 +98,13 @@ def choix_option():
     while True: 
         print("1 - Jouer")
         print("2 - Affichet le leaderboard")
-        print("2 - quitter")
+        print("3 - quitter")
         choix = input("Ton choix : ").strip()
         if condition(choix):
             return int(choix)
 
-def condition():
-    if not choix_option.isdigit():
+def condition(choix):
+    if not choix.isdigit():
         print("veuillez rentrer un chiffre parmis les options proposé")
         return False
     choix = int(choix)
@@ -122,36 +121,36 @@ def saisir_pseudo():
         print("Le pseudo ne peut pas être vide !")
 
 def choix_personnage_aleatoire():
-    personnage = random.choice(personnage)
+    personnage = random.choice(liste_personnage)
     return personnage
 
 def choix_monstre_aleatoire():
-    monstre = random.choice(monstre)
+    monstre = random.choice(liste_monstre)
     return monstre
 
 def attaquer(personnage, monstre):
-    monstre["pv"] = monstre["pv"] - personnage["degats"]
-    print(f"{personnage['nom']} ATK {monstre['nom']} : {personnage['degats']} dégâts")
-    print(f"PV de {monstre['nom']} : {max(0, monstre['pv'])}")
+    monstre["PV"] = monstre["PV"] - personnage["ATK"]
+    print(f"{personnage['NOM']} ATK {monstre['NOM']} : {personnage['ATK']} dégâts")
+    print(f"PV de {monstre['NOM']} : {max(0, monstre['PV'])}")
     if est_mort(personnage, monstre):
         return
-    personnage["pv"] = personnage["pv"] - monstre["degats"]
-    print(f"{monstre['nom']} ATK {personnage['nom']} : {monstre['degats']} dégâts")
-    print(f"PV de {personnage['nom']} : {max(0, personnage['pv'])}")
+    personnage["PV"] = personnage["PV"] - monstre["ATK"]
+    print(f"{monstre['NOM']} ATK {personnage['NOM']} : {monstre['ATK']} dégâts")
+    print(f"PV de {personnage['NOM']} : {max(0, personnage['PV'])}")
     est_mort(personnage, monstre)
 
 def est_mort(personnage, monstre):
-    if monstre["pv"] <= 0:
-        print(f"{personnage ["nom"]} win !")
+    if monstre["PV"] <= 0:
+        print(f"{personnage ["NOM"]} win !")
         return True
-    if personnage["pv"] <= 0:
-        print(f"{monstre ["nom"]} win !")
+    if personnage["PV"] <= 0:
+        print(f"{monstre ["NOM"]} win !")
         return True
     return False
 
 def combat(personnage, monstre):
-    print(f"{personnage ["nom"]} affronte {monstre ["nom"]}")
-    while personnage ["pv"] > 0 and monstre ["pv"] > 0:
+    print(f"{personnage ["NOM"]} affronte {monstre ["NOM"]} que le combat commence !")
+    while personnage ["PV"] > 0 and monstre ["PV"] > 0:
         attaquer(personnage, monstre)
 
 def main():
@@ -164,7 +163,7 @@ def main():
             combat(perso, monstre)
         elif reponse == 2:
             print("Leaderboard") #A faire..
-        elif choix == 3:
+        elif reponse == 3:
             print("Quitter le jeu")
             break
 main()
