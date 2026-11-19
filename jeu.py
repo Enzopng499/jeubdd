@@ -85,7 +85,9 @@
 # Lancer le programme 
 #   appeler main
 
-
+import copy
+import random
+from model import personnage, monstre
 
 from pymongo import MongoClient
 from model import personnage, monstre
@@ -118,6 +120,17 @@ def saisir_pseudo():
         if pseudo != "":
             return pseudo
         print("Le pseudo ne peut pas être vide !")
+
+def choix_personnage_aleatoire():
+    personnage = random.choice(personnage)
+    return personnage
+
+def choix_monstre_aleatoire():
+    monstre = random.choice(monstre)
+    return monstre
+
+
+
     
 
 
