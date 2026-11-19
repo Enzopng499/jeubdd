@@ -79,7 +79,7 @@
 #       sinon si le choix est 2
 #           afficher le leaderboard
 #       sinon si le choix est 3
-#           afficher quuitter
+#           afficher quitter
 #           arrêter la boucle
 
 # Lancer le programme 
@@ -93,6 +93,41 @@ from model import personnage, monstre
 client = MongoClient("mongodb://localhost:27017/")
 db = client["bdd_python"]
 
+def choix_option():
+    while True: 
+        print("1 - Jouer")
+        print("2 - Affichet le leaderboard")
+        print("2 - quitter")
+        choix = input("Ton choix : ").strip()
+        if condition(choix):
+            return int(choix)
+
+def condition():
+    if not choix_option.isdigit():
+        print("veuillez rentrer un chiffre parmis les options proposé")
+        return False
+    choix = int(choix)
+    if choix < 1 or choix > 3:
+        print("veuillez rentrer un chiffre parmis les options proposé")
+        return False
+    return True
+
+    
+
+
+
+#definit la condition
+#   si le choix n'est pas un chiffre 
+#       afficher un message d'erreur
+#       retourner false
+#   convertir le choix en nombre
+#   si le choix est inferieur à 1 ou supérieur à 3
+#       afficher un message d'erreur
+#       retouner false
+#   retourner true
+        
+
+    
 
 
 
