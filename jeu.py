@@ -1,8 +1,8 @@
-#definir la fonction menu
+#definir la fonction choix_option
 #   tant que infini
 #       proposer les choix a l'utilisateur 
 #       demander un choix à l'utilisateur
-#       on appel la fonction condition
+#       on appel la fonction conditon avec les choix 
 #       si le choix est valide
 #           retourner le choix
 
@@ -10,7 +10,7 @@
 #   si le choix n'est pas un chiffre 
 #       afficher un message d'erreur
 #       retourner false
-#   convertir le choix en nombre
+#   convertir le choix en nombre ???
 #   si le choix est inferieur à 1 ou supérieur à 3
 #       afficher un message d'erreur
 #       retouner false
@@ -18,7 +18,7 @@
 
 
 # Définir le pseudo du joueur
-#   tant que infinit
+#   tant que infini
 #       demander à l'utilisateur de saisir son pseudo
 #       si le pseudo n'est pas vide
 #           retourner le pseudo
@@ -31,11 +31,24 @@
 #   choisir un  au hasard dans la liste personnage
 #   retourner le personnage choisi  
 
-
 # Définir le choix du monstre aléatoie
 #   parmis la liste monstre dans le model
 #   choisir un monstre au hasard dans liste_monstre
-#   retourner le monstre choisi
+#   retourner le monstre choisi 
+
+
+#Définir la fonction attaquer
+#   personnage attaque le monstre
+#   retirer les dégâts du personnage aux PV du monstre
+#   afficher personnage ATK monstre avec les degats 
+#   montrer les pv du monstre
+#   si est_mort retourner true 
+#        arreter la fonction
+#   monstre attaque le personnage
+#   retirer les dégâts du monstre aux PV du personnage
+#   afficher monstre ATK personnage avec les degats 
+#   montrer les pv du personnage
+#   si est_mort retourner true 
 
 
 # Définir la fonction est_mort 
@@ -49,23 +62,18 @@
 #       retourner false
 
 
-#Définir la fonction attaquer 
-#   personnage attaque le monstre
-#   retirer les dégâts du personnage aux PV du monstre
-#       montrer les pv du monstre
-#   si est_mort retourner true 
-#        arreter le combat
-#   monstre attaque le personnage
-#   retirer les dégâts du monstre aux PV du personnahe
-#   montrer les pv du personnage
-#   si est_mort retourner true 
-#       arreter la boucle
-
-#Définir la fonction antité vivante
-#   annoncer le combat entre le personnage et le monstre 
+#Définir la fonction combat
+#   annoncer le combat entre le personnage et le monstre
 #   tant que les pv du personnage sont superieur a 0
 #       et que les PV du monstre sont supérieurs à 0
-#           appeler la fonction attaquer 
+#           appeler la fonction attaquer
+
+
+
+
+
+
+
 
 
 
@@ -74,7 +82,7 @@
 from pymongo import MongoClient
 from model import personnage, monstre
 
-client = MongoClient("mongodb://localhost:270er que le monstre a gagné17/")
+client = MongoClient("mongodb://localhost:27017/")
 db = client["bdd_python"]
 
 def 
