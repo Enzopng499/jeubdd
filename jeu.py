@@ -10,14 +10,14 @@
 #   si le choix n'est pas un chiffre 
 #       afficher un message d'erreur
 #       retourner false
-#   convertir le choix en nombre ???
+#   convertir le choix en nombre
 #   si le choix est inferieur à 1 ou supérieur à 3
 #       afficher un message d'erreur
 #       retouner false
 #   retourner true
 
 
-# Définir le pseudo du joueur
+# Définir la fonction saisir pseudo 
 #   tant que infini
 #       demander à l'utilisateur de saisir son pseudo
 #       si le pseudo n'est pas vide
@@ -68,14 +68,22 @@
 #       et que les PV du monstre sont supérieurs à 0
 #           appeler la fonction attaquer
 
+# Définir la fonction main
+#   tant que infini
+#       appeler choix utilisateur et récupérer les choix
+#       si le choix est 1
+#           appeler saisir_pseudo
+#           appeler choix_personnage_aleatoire
+#           appeler choix_monstre_aleatoire
+#           appeler combat avec le personnage et le monstre
+#       sinon si le choix est 2
+#           afficher le leaderboard
+#       sinon si le choix est 3
+#           afficher quuitter
+#           arrêter la boucle
 
-
-
-
-
-
-
-
+# Lancer le programme 
+#   appeler main
 
 
 
@@ -85,7 +93,7 @@ from model import personnage, monstre
 client = MongoClient("mongodb://localhost:27017/")
 db = client["bdd_python"]
 
-def 
+
 
 
 
