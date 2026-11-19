@@ -154,6 +154,23 @@ def combat(personnage, monstre):
     while personnage ["pv"] > 0 and monstre ["pv"] > 0:
         attaquer(personnage, monstre)
 
+def main():
+    while True:
+        reponse = choix_option()
+        if reponse == 1:
+            pseudo = saisir_pseudo()
+            perso = choix_personnage_aleatoire()
+            monstre = choix_monstre_aleatoire()
+            combat(perso, monstre)
+        elif reponse == 2:
+            print("Leaderboard") #A faire..
+        elif choix == 3:
+            print("Quitter le jeu")
+            break
+main()
+
+
+
     
 
 
