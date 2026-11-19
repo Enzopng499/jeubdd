@@ -112,20 +112,21 @@ def condition():
         return False
     return True
 
+def saisir_pseudo():
+    while True:
+        pseudo = input("Ton pseudo : ").strip()
+        if pseudo != "":
+            return pseudo
+        print("Le pseudo ne peut pas être vide !")
     
 
 
 
-#definit la condition
-#   si le choix n'est pas un chiffre 
-#       afficher un message d'erreur
-#       retourner false
-#   convertir le choix en nombre
-#   si le choix est inferieur à 1 ou supérieur à 3
-#       afficher un message d'erreur
-#       retouner false
-#   retourner true
-        
+    
+
+
+
+
 
     
 
